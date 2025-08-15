@@ -4,7 +4,7 @@ A modern, full-stack event management platform built with React.js, Node.js, and
 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/051188-rk/eventease/main/public/logo.png" alt="logo" />
+  <img src="https://raw.githubusercontent.com/051188-rk/eventease/main/frontend/public/logo.png" alt="logo" />
 </p>
 
 ## 🚀 Features
