@@ -1,0 +1,67 @@
+.decorative-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.decorative-modal {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  padding: 32px 28px 24px 28px;
+  min-width: 340px;
+  max-width: 90vw;
+  animation: popIn 0.3s cubic-bezier(.68,-0.55,.27,1.55);
+  position: relative;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.85); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.decorative-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.decorative-modal-icon {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-right: 8px;
+}
+
+.decorative-modal-body {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.decorative-modal-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.decorative-modal-btn {
+  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 32px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.decorative-modal-btn:hover {
+  background: linear-gradient(90deg, #0056b3 0%, #0099cc 100%);
+}
