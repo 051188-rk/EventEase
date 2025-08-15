@@ -2,6 +2,11 @@
 
 A modern, full-stack event management platform built with React.js, Node.js, and MongoDB.
 
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/051188-rk/eventease/main/public/logo.png" alt="logo" />
+</p>
+
 ## 🚀 Features
 
 - **User Authentication**: JWT-based auth with Google OAuth integration
