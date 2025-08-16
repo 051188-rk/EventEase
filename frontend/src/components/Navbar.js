@@ -4,6 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
 import ThemeToggle from './ThemeToggle';
 import './Navbar.css';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const { user, logout, isAuthenticated } = useAuth();
@@ -43,7 +44,7 @@ const Navbar = () => {
       <div className="navbar-container">
         {/* Logo */}
         <Link to="/" className="navbar-brand">
-          EventEase
+          <img src={logo} alt="EventEase Logo" className="navbar-logo" />
         </Link>
 
         {/* Desktop Navigation */}

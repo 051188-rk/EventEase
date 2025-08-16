@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useTheme } from '../context/ThemeContext';
 import EventCard from '../components/EventCard';
+import Hero from '../components/Hero';
 import axios from 'axios';
-import './Home.css'; // <-- Add this import
+import './Home.css';
 
 const Home = () => {
   const { isAuthenticated } = useAuth();
+  const { theme, isDark } = useTheme();
   const [featuredEvents, setFeaturedEvents] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     const fetchFeaturedEvents = async () => {
@@ -27,28 +31,8 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="home-page">
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-overlay"></div>
-        <div className="hero-content">
-          <h1 className="hero-title">Connect, Experience, Celebrate</h1>
-          <p className="hero-subtitle">
-            Find and create unforgettable events. Your next great experience is just a click away.
-          </p>
-          <div className="hero-buttons">
-            {isAuthenticated ? (
-              <Link to="/events" className="btn btn-primary btn-lg">
-                Explore Events
-              </Link>
-            ) : (
-              <Link to="/signup" className="btn btn-primary btn-lg">
-                Get Started
-              </Link>
-            )}
-          </div>
-        </div>
-      </section>
+    <div className={`home-page ${isDark ? 'dark-theme' : ''}`}>
+      <Hero />
 
       {/* Features Section */}
       <section className="features-section">

@@ -20,15 +20,31 @@
 }
 
 .navbar-brand {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
 }
 
-.navbar-brand:hover {
-  color: var(--primary-hover);
+.navbar-logo {
+  height: 32px;
+  width: auto;
+}
+
+.navbar-brand span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 .navbar-nav {
@@ -241,21 +257,33 @@
 .navbar-mobile-toggle {
   display: none;
   background: none;
-  border: none;
-  color: var(--text);
+  border: 2px solid var(--primary);
+  color: var(--primary);
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 6px;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar-mobile-toggle:hover {
-  background: var(--background);
+  background: var(--primary);
+  color: white;
+  transform: scale(1.05);
 }
 
 .navbar-mobile-toggle .w-6 {
   width: 1.5rem;
   height: 1.5rem;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
 }
 
 /* Mobile Navigation */

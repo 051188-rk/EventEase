@@ -1,0 +1,246 @@
+/* Hero Section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  color: var(--text-primary);
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  padding: 4rem 0;
+}
+
+.hero-container {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  box-sizing: border-box;
+  gap: 4rem;
+}
+
+/* Left Side - Image, Text, and Button */
+.hero-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  padding-right: 2rem;
+}
+
+.hero-image-left-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 2rem;
+  /* Custom properties for image adjustment */
+  --left-image-scale: 2.5;
+  --left-image-offset-x: 50px;
+  --left-image-offset-y: 35px;
+}
+
+.hero-image-left {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: left top;
+  filter: drop-shadow(0 10px 30px var(--shadow-color));
+  transition: all 0.3s ease;
+  transform: scale(var(--left-image-scale, 1)) 
+             translateX(var(--left-image-offset-x, 0)) 
+             translateY(var(--left-image-offset-y, 0));
+}
+
+.hero-content {
+  max-width: 600px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin: 0 0 2.5rem 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-weight: 400;
+  width: 100%;
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 190px;
+}
+
+/* Right Side - Second Image */
+.hero-right {
+  flex: 1;
+  position: relative;
+  height: 100%;
+  min-height: 60vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.hero-image-right-container {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  /* Custom properties for image adjustment */
+  --right-image-scale: 1.5;
+  --right-image-offset-x: -70px;
+  --right-image-offset-y: 30px;
+}
+
+.hero-image-right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  max-height: 90%;
+  object-fit: contain;
+  object-position: right bottom;
+  filter: drop-shadow(0 10px 30px var(--shadow-color));
+  transition: all 0.3s ease;
+  transform: scale(var(--right-image-scale, 1))
+             translateX(var(--right-image-offset-x, 0))
+             translateY(var(--right-image-offset-y, 0));
+}
+
+/* Buttons */
+.hero-buttons {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: -180px;
+}
+
+.hero-buttons .btn {
+  font-size: 1.2rem;
+  padding: 0.7rem 2.5rem;
+  border-radius: 50px;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--btn-bg);
+  color: var(--btn-text) !important;
+  border: 2px solid var(--btn-border);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  height: auto;
+  min-height: 3rem;
+}
+
+.hero-buttons .btn:hover {
+  background-color: var(--btn-hover-bg);
+  color: var(--btn-hover-text) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .hero-container {
+    padding: 0 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .hero-buttons .btn {
+    font-size: 1.1rem;
+    padding: 0.6rem 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-section {
+    min-height: auto;
+    padding: 3rem 0;
+  }
+  
+  .hero-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .hero-left {
+    padding-right: 0;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero-subtitle {
+    text-align: center;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .hero-image-left-container {
+    margin: 0 auto 2rem;
+  }
+  
+  .hero-right {
+    min-height: 400px;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  
+  .hero-image-right-container {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .hero-image-right {
+    position: relative;
+    max-height: 60vh;
+    transform: none !important;
+  }
+  
+  .hero-image-left {
+    transform: none !important;
+  }
+}
+
+/* Example of how to adjust the images in your custom CSS:
+.hero-image-left-container {
+  --left-image-scale: 1.1;
+  --left-image-offset-x: -20px;
+  --left-image-offset-y: 10px;
+}
+
+.hero-image-right-container {
+  --right-image-scale: 1.1;
+  --right-image-offset-x: 30px;
+  --right-image-offset-y: 20px;
+}
+*/
