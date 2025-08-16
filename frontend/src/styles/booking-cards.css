@@ -1,0 +1,59 @@
+/* Booking Card Icons */
+.booking-card .icon-wrapper {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.booking-card svg {
+  width: 100%;
+  height: 100%;
+  stroke-width: 2;
+  color: var(--text-secondary);
+}
+
+/* Calendar icon specific */
+.booking-card .calendar-icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* Location icon specific */
+.booking-card .location-icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* Status badge icon */
+.booking-card .status-badge-icon {
+  width: 12px;
+  height: 12px;
+  margin-right: 4px;
+}
+
+/* Price tag icon */
+.booking-card .price-tag {
+  width: 12px;
+  height: 12px;
+  margin-right: 4px;
+}
+
+/* No bookings illustration */
+.no-bookings-illustration {
+  width: 60px;
+  height: 60px;
+  color: var(--text-secondary);
+  margin: 0 auto 1rem;
+}
+
+/* Event image fallback icon */
+.event-image-fallback {
+  width: 40px;
+  height: 40px;
+  color: var(--text-secondary);
+  opacity: 0.7;
+}

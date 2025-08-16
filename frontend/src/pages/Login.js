@@ -63,11 +63,21 @@ const Login = () => {
     
     try {
       const result = await login(formData.identifier, formData.password);
-      if (result.success) {
+      if (result && result.success) {
         navigate(from, { replace: true });
+      } else {
+        // Show error from the auth context
+        setErrors(prev => ({
+          ...prev,
+          form: error || 'Invalid email/username or password'
+        }));
       }
     } catch (error) {
       console.error('Login error:', error);
+      setErrors(prev => ({
+        ...prev,
+        form: error.response?.data?.message || 'An error occurred during login'
+      }));
     } finally {
       setIsSubmitting(false);
     }
@@ -95,9 +105,14 @@ const Login = () => {
           <div className="card w-full max-w-md">
             <div className="text-center mb-8">
               <h1 className="text-3xl text-bold text-primary mb-2">Welcome Back</h1>
-              <p className="text-secondary">
+              <p className="text-secondary mb-4">
                 Sign in to your EventEase account
               </p>
+              {errors.form && (
+                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                  {errors.form}
+                </div>
+              )}
             </div>
 
             {/* Error Message */}

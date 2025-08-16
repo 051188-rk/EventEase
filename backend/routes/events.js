@@ -5,6 +5,35 @@ import upload from '../utils/uploadImage.js';
 
 const router = express.Router();
 
+// Debug endpoint to list all events with full details
+router.get('/debug/all', async (req, res) => {
+  try {
+    const events = await Event.find({})
+      .populate('createdBy', 'name username email')
+      .lean();
+      
+    // Convert all ObjectIds to strings for better readability
+    const eventsWithStrings = events.map(event => ({
+      ...event,
+      _id: event._id.toString(),
+      createdBy: event.createdBy ? {
+        ...event.createdBy,
+        _id: event.createdBy._id.toString()
+      } : null,
+      createdAt: event.createdAt,
+      updatedAt: event.updatedAt
+    }));
+    
+    res.json({
+      count: eventsWithStrings.length,
+      events: eventsWithStrings
+    });
+  } catch (error) {
+    console.error('Debug get all events error:', error);
+    res.status(500).json({ message: 'Server error', error: error.message });
+  }
+});
+
 // Get all events
 router.get('/', async (req, res) => {
   try {
