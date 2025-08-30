@@ -26,8 +26,9 @@ app.use(cors({
   credentials: true
 }));
 
+
 // Database connection
-mongoose.connect("mongodb://localhost:27017/authdb", { 
+mongoose.connect(process.env.MONGODB_URI, { 
   useNewUrlParser: true, 
   useUnifiedTopology: true 
 })
